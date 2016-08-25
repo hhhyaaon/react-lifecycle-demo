@@ -10,15 +10,15 @@ var cfg = Object.assign(webpackBase, {
 Object.getOwnPropertyNames((webpackBase.entry || {})).map(function (name) {
     cfg.entry[name] = []
         //.concat("webpack-hot-middleware/client.js")
-        .concat("webpack/hot/dev-server")
-        .concat("webpack-dev-server/client?http://localhost:9390")
+        // .concat("webpack/hot/dev-server")
+        // .concat("webpack-dev-server/client?http://localhost:9390")
         .concat(webpackBase.entry[name])
 });
 
 //plugins
 cfg.plugins = (webpackBase.plugins || []).concat(
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
 )
 

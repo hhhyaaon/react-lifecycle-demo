@@ -10,7 +10,7 @@ const util = {
             }, {
                 name: "info",
                 style: {
-                    color: "green"
+                    color: "blue"
                 }
             }, {
                 name: "warn",

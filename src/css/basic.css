@@ -1,2 +1,9 @@
 *{margin:0;padding:0}
-body{font-size: "微软雅黑"}
+body{font-family: "微软雅黑";font-size: 14px;padding:30px;}
+body *{line-height: 1.5;}
+ul,li{list-style: none;}
+
+fieldset{padding:10px;margin:10px;width:300px;}
+legend{padding:0 5px;}
+.btn{border:none;padding:5px 10px;border-radius: 5px;cursor: pointer;color: white;background-color: rgb(0,149,217);margin:5px 0;}
+.list{color:gray;padding-left: 20px;}

@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 var path = require("path");
-var ExtractTextWepbacp = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtraTextPlugin = require("extract-text-webpack-plugin");
 
 var devPath = path.join(__dirname, "./src");
 var distPath = path.join(__dirname, "./dist");
@@ -27,6 +27,12 @@ module.exports = {
                     cacheDirectory: true
                 },
                 exclude: /node_modules/
+            }, {
+                test: /.css/,
+                loader: ExtraTextPlugin.extract("style", "css"),
+                include: [
+                    path.join(devPath, "./css")
+                ]
             }
         ]
     },
@@ -37,6 +43,9 @@ module.exports = {
             filename: path.join(devPath, "../") + "index.html",
             cache: true,
             chunks: ["index"]
+        }),
+        new ExtraTextPlugin("[name].css", {
+            allChunks: true
         })
     ]
 }
